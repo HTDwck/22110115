@@ -6,9 +6,14 @@ def factorial(n):
         result *= i
     return result
 
-n = int(input("nhập một số nguyên không âm: "))
+while True:
+    try:
+        n = int(input("Nhập một số nguyên không âm: "))
+        if n < 0:
+            print("Hãy nhập một số nguyên không âm!")
+        else:
+            break  
+    except ValueError:
+        print("Nhập một số nguyên hợp lệ!")
 
-if n < 0:
-    print("hãy nhập một số nguyên không âm!")
-else:
-    print(f"{n}! = {factorial(n)}")
+print(f"{n}! = {factorial(n)}")
